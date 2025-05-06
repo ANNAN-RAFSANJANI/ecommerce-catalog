@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
     <HelloWorld msg="Welcome to Your Vue.js App"/>
@@ -25,4 +25,21 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
-</style>
+</style> -->
+
+<template>
+  <div id="app">
+    <WomenSection />
+  </div>
+</template>
+
+<script>
+import WomenSection from './components/women-section.vue';
+
+export default {
+  name: 'App',
+  components: {
+    WomenSection
+  }
+};
+</script>

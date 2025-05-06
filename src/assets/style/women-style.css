@@ -1,0 +1,121 @@
+.product-section {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    padding: 2rem;
+    background: url("../img/women-img/bg-women.png") no-repeat center;
+    background-size: cover;
+  }
+  
+  .product-card {
+    grid-column: 3 / span 8;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    background: #fff;
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .product-image {
+    grid-column: 1 / span 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .product-image img {
+    width: 100%;
+    max-width: 220px;
+  }
+  
+  .product-details {
+    grid-column: 6 / span 7;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .product-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #7e184e;
+  }
+  
+  .category-rating {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .category {
+    background: #f0e0e7;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+  }
+  
+  .rating {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .dots {
+    display: flex;
+    gap: 4px;
+  }
+  
+  .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #ccc;
+  }
+  
+  .dot.filled {
+    background: #7e184e;
+  }
+  
+  .description {
+    font-size: 0.95rem;
+    color: #444;
+    line-height: 1.4;
+  }
+  
+  .price-action {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  
+  .price {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #7e184e;
+  }
+  
+  .btn {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: 0.3s ease;
+  }
+  
+  .btn.buy {
+    background-color: #7e184e;
+    color: #fff;
+  }
+  
+  .btn.next {
+    background-color: #fff;
+    border: 1px solid #7e184e;
+    color: #7e184e;
+  }
+  
+  .btn:hover {
+    opacity: 0.85;
+  }
+  
