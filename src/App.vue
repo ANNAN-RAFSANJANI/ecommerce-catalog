@@ -1,45 +1,42 @@
-<!-- <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
-</template>
-
-<script>
-import HelloWorld from './components/men-section.vue'
-
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
-</script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style> -->
-
 <template>
   <div id="app">
-    <WomenSection />
+    <NavbarSection />
+    <router-view />
+    <FooterSection />
   </div>
 </template>
 
 <script>
-import WomenSection from './components/women-section.vue';
+import NavbarSection from './components/navbar-section.vue';
+import FooterSection from './components/footer-section.vue';
+
 
 export default {
   name: 'App',
   components: {
-    WomenSection
+    NavbarSection,
+    FooterSection
+
   }
 };
 </script>
+
+<!-- <template>
+  <div id="app">
+    <UnavailableProductSection />
+  </div>
+</template>
+
+<script>
+import UnavailableProductSection from './components/unavailable-poduct.vue';
+
+
+export default {
+  name: 'App',
+  components: {
+    UnavailableProductSection
+
+  }
+};
+</script> -->
+

@@ -1,46 +1,44 @@
 <template>
-    <div class="product-section">
-      <div class="product-card">
-        <div class="product-image">
-          <img src="/img/women-img/baju1.png" alt="Jacket" />
+  <div class="product-section-women">
+    <div class="product-card-women">
+      <div class="product-image-women">
+        <img src="/img/women-img/baju 1.png" alt="Baju" />
+      </div>
+      <div class="product-details-women">
+        <h2 class="product-title-women">
+          Women's Casual Top
+        </h2>
+        <div class="category-rating-women">
+          <span class="category-women">women's clothing</span>
+          <div class="rating-women">
+            <span>4.2/5</span>
+            <span class="dots-women">
+              <span class="dot-women filled"></span>
+              <span class="dot-women filled"></span>
+              <span class="dot-women filled"></span>
+              <span class="dot-women filled"></span>
+              <span class="dot-women"></span>
+            </span>
+          </div>
         </div>
-        <div class="product-details">
-          <h2 class="product-title">
-            Lock and Love Women's Removable Hooded Faux Leather Moto Biker Jacket
-          </h2>
-          <div class="category-rating">
-            <span class="category">women's clothing</span>
-            <div class="rating">
-              <span>2.9/5</span>
-              <span class="dots">
-                <span class="dot filled"></span>
-                <span class="dot filled"></span>
-                <span class="dot filled"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
-              </span>
-            </div>
-          </div>
-          <p class="description">
-            great outerwear jackets for Spring/Autumn/Winter, suitable for many occasions, such as working, hiking,
-            camping, mountain/rock climbing, cycling, traveling or other outdoors. Good gift choice for you or your family member.
-            A warm hearted love to Father, husband or son in this thanksgiving or Christmas Day.
-          </p>
-          <div class="price-action">
-            <span class="price">$29.95</span>
-            <button class="btn buy">Buy now</button>
-            <button class="btn next">Next product</button>
-          </div>
+        <p class="description-women">
+          Stylish and comfortable women's top perfect for casual outings. This versatile piece features a flattering fit and soft fabric, making it a must-have addition to your wardrobe. Pair it with jeans or a skirt for a complete look.
+        </p>
+        <div class="price-action-women">
+          <span class="price-women">$19.95</span>
+          <button class="btn-women buy">Buy now</button>
+          <button class="btn-women next">Next product</button>
         </div>
       </div>
     </div>
-  </template>
+  </div>
+</template>
 
 
 <script>
 import '@/assets/style/women-style.css'
 
 export default {
-  name: "WomenSection",
+name: "WomenSection",
 };
 </script>
