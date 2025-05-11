@@ -1,5 +1,5 @@
 <template>
-  <footer :class="['footer', { 'women': $route.path === '/wanita' }]">
+  <footer :class="['footer', { 'women': isWomenSection }]">
     <div class="footer-container">
       <div class="footer-divider"></div>
       <div class="footer-row">
@@ -32,6 +32,11 @@
 import '@/assets/style/footer-style.css'
 
 export default {
-  name: "FooterSection"
+  name: "FooterSection",
+  computed: {
+    isWomenSection() {
+      return this.$route.path.startsWith('/wanita');
+    }
+  }
 };
 </script>

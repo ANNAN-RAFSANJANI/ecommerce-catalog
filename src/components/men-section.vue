@@ -34,9 +34,6 @@
         </div>
       </div>
     </div>
-    <div v-else>
-      <div class="redirect-message">Redirecting to unavailable product page...</div>
-    </div>
   </div>
 </template>
 
@@ -79,9 +76,7 @@ export default {
         this.product = product
         this.loading = false
         
-        // Redirect if product is not men's clothing
         if (product && product.category !== 'men\'s clothing') {
-          // Add small timeout to allow component to render before redirect
           setTimeout(() => {
             this.$router.push(`/pria/unavailable-product/${this.currentIndex}`);
           }, 100);
@@ -110,12 +105,3 @@ export default {
   }
 }
 </script>
-
-<style>
-.redirect-message {
-  text-align: center;
-  padding: 20px;
-  color: #555;
-  font-style: italic;
-}
-</style>

@@ -28,7 +28,10 @@ const routes = [
     path: '/pria/unavailable-product/:id',
     name: 'PriaUnavailable',
     component: UnavailableProductSection,
-    props: true
+    props: (route) => ({ 
+      id: route.params.id,
+      category: 'men' 
+    })
   },
   {
     path: '/wanita',
@@ -40,6 +43,15 @@ const routes = [
     name: 'WanitaDetail', 
     component: WomenSection,
     props: true
+  },
+  {
+    path: '/wanita/unavailable-product/:id',
+    name: 'WanitaUnavailable',
+    component: UnavailableProductSection,
+    props: (route) => ({ 
+      id: route.params.id,
+      category: 'women' 
+    })
   },
   {
     path: '*',

@@ -1,5 +1,5 @@
 .footer {
-  background-color: #D6E6FF; /* Default color untuk Pria */
+  background-color: #D6E6FF; 
   color: #333;
   padding: 3rem 0 1.5rem;
   margin-top: 0px;
@@ -7,7 +7,7 @@
 }
 
 .footer.women {
-  background-color: #FDE2FF; /* Warna khusus untuk halaman Wanita */
+  background-color: #FDE2FF; 
 }
 
 .footer-divider {

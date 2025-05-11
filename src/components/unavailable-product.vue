@@ -1,9 +1,13 @@
 <template>
-  <div class="unavailable-product-section">
+  <div class="unavailable-product-section" :class="{ 'women': category === 'women' }">
     <div class="unavailable-product-card">
       <div class="sad-face"></div>
-      <div class="unavailable-text">This product is unavailable in Men's category</div>
-      <button class="btn next" @click="nextProduct">Next product</button>
+      <div class="unavailable-text">
+        This product is unavailable in {{ categoryDisplay }} category
+      </div>
+      <button class="btn next" :class="{ 'women': category === 'women' }" @click="nextProduct">
+        Next product
+      </button>
     </div>
   </div>
 </template>
@@ -17,6 +21,19 @@
       id: {
         type: [String, Number],
         default: null
+      },
+      category: {
+        type: String,
+        default: 'men',
+        validator: (value) => ['men', 'women'].includes(value)
+      }
+    },
+    computed: {
+      categoryDisplay() {
+        return this.category === 'women' ? "Women's" : "Men's";
+      },
+      categoryRoute() {
+        return this.category === 'women' ? '/wanita/' : '/pria/';
       }
     },
     data() {
@@ -34,7 +51,7 @@
           currentIndex = 1;
         }
         
-        this.$router.push(`/pria/${currentIndex}`);
+        this.$router.push(`${this.categoryRoute}${currentIndex}`);
       },
       goBack() {
         this.$router.push('/');

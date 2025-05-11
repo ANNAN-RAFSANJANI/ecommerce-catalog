@@ -34,22 +34,15 @@
         </div>
       </div>
     </div>
-    <div v-else>
-      <UnavailableProductSection @next="nextProduct" />
-    </div>
   </div>
 </template>
 
 <script>
 import '@/assets/style/women-style.css'
 import axios from 'axios'
-import UnavailableProductSection from './unavailable-product.vue'
 
 export default {
   name: "WomenSection",
-  components: {
-    UnavailableProductSection
-  },
   props: {
     id: {
       type: [String, Number],
@@ -82,6 +75,12 @@ export default {
 
         this.product = product
         this.loading = false
+        
+        if (product && product.category !== 'women\'s clothing') {
+          setTimeout(() => {
+            this.$router.push(`/wanita/unavailable-product/${this.currentIndex}`);
+          }, 100);
+        }
       } catch (err) {
         this.error = "Gagal memuat produk: " + err.message
         this.loading = false
@@ -95,7 +94,6 @@ export default {
       }
       
       this.$router.push(`/wanita/${this.currentIndex}`);
-
     }
   },
   created() {
