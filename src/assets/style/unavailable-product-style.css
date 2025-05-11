@@ -2,10 +2,11 @@
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   padding: 2rem;
+  background: url("../img/unavailable-product-img/bg-pattern.png") center center / cover no-repeat;
   background-color: #D6E6FF; 
   background-size: cover;
   min-height: 100vh;
-  width: 100%;
+  width: 100%; 
   box-sizing: border-box;
 }
 

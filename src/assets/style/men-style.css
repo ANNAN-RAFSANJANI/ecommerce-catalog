@@ -150,7 +150,6 @@ body {
   }
 }
 
-/* Mobile Styles */
 @media (max-width: 768px) {
   .product-section-men {
     padding: 1rem;
@@ -159,8 +158,8 @@ body {
   .product-card-men {
     grid-template-columns: 1fr;
     padding: 1.5rem;
-    bottom: 0; /* Hapus posisi bottom pada mobile */
-    margin-top: 2rem; /* Tambahkan margin atas sebagai gantinya */
+    bottom: 0; 
+    margin-top: 2rem; 
     width: 90%;
   }
 
@@ -201,7 +200,6 @@ body {
   }
 }
 
-/* Small Mobile Styles */
 @media (max-width: 480px) {
   .product-card-men {
     padding: 1.25rem;

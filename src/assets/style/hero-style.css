@@ -3,9 +3,10 @@
   align-items: center;
   justify-content: space-between;
   padding: 2rem;
-  background-color: 
-#D6E6FF;
-  min-height: 550px;
+  background-color:#D6E6FF;
+  min-height: 100vh; /* Menggunakan viewport height untuk memenuhi tinggi layar */
+  width: 100%; /* Memastikan lebar penuh */
+  box-sizing: border-box; /* Memastikan padding tidak menambah ukuran elemen */
 }
 
 .hero-content {
@@ -222,9 +223,7 @@
   }
 
   .hero-image {
-    width: 400px;
-
-    
+    width: 400px;   
   }
 
   .hero-navigation {
@@ -242,7 +241,7 @@
   }
 
   .nav-btn.next {
-    right: 25px;
+    right: 25px; 
   }
 
   .dropdown-container {
