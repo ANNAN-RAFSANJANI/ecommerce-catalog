@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
   <div id="app">
     <NavbarSection />
     <router-view />
@@ -19,24 +19,29 @@ export default {
 
   }
 };
-</script>
+</script> -->
 
-<!-- <template>
+<template>
   <div id="app">
-    <UnavailableProductSection />
+    <NavbarSection />
+    <UnavailableProductSection/>
+    <FooterSection />
   </div>
 </template>
 
 <script>
-import UnavailableProductSection from './components/unavailable-poduct.vue';
-
+import UnavailableProductSection from './components/unavailable-product.vue'
+import NavbarSection from './components/navbar-section.vue';
+import FooterSection from './components/footer-section.vue';
 
 export default {
   name: 'App',
   components: {
-    UnavailableProductSection
-
+    NavbarSection,
+    UnavailableProductSection,
+    FooterSection
   }
-};
-</script> -->
+}
+</script>
+
 
