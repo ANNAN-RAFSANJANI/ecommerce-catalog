@@ -20,8 +20,8 @@
   border-radius: 10px;
   padding: 2rem;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  position: relative; 
-  bottom: 70px;        
+  position: relative;
+  bottom: 70px;
 }
 
 .product-image-women {
@@ -127,6 +127,23 @@
   opacity: 0.85;
 }
 
+/* Tablet Styles */
+@media (max-width: 992px) {
+  .product-card-women {
+    max-width: 90%;
+    gap: 1.5rem;
+  }
+  
+  .product-image-women {
+    grid-column: 1 / span 5;
+  }
+  
+  .product-image-women img {
+    max-width: 180px;
+  }
+}
+
+/* Mobile Styles */
 @media (max-width: 768px) {
   .product-section-women {
     padding: 1rem;
@@ -135,11 +152,18 @@
   .product-card-women {
     grid-template-columns: 1fr;
     padding: 1.5rem;
+    bottom: 0; /* Hapus posisi bottom pada mobile */
+    margin-top: 2rem; /* Tambahkan margin atas sebagai gantinya */
+    width: 90%;
   }
 
   .product-image-women {
     grid-column: 1 / -1;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .product-image-women img {
+    max-width: 180px;
   }
 
   .product-details-women {
@@ -155,10 +179,41 @@
   .price-action-women {
     flex-direction: column;
     align-items: flex-start;
+    width: 100%;
   }
 
   .btn-women {
     width: 100%;
     text-align: center;
+    margin-top: 0.5rem;
+    padding: 0.75rem 1rem;
+  }
+  
+  .btn-women.buy {
+    margin-bottom: 0.5rem;
+  }
+}
+
+/* Small Mobile Styles */
+@media (max-width: 480px) {
+  .product-card-women {
+    padding: 1.25rem;
+    width: 92%;
+  }
+  
+  .product-title-women {
+    font-size: 1.1rem;
+  }
+  
+  .description-women {
+    font-size: 0.9rem;
+  }
+  
+  .price-women {
+    font-size: 1.1rem;
+  }
+  
+  .product-image-women img {
+    max-width: 150px;
   }
 }

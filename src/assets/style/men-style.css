@@ -126,12 +126,31 @@
 .btn-men:hover {
   opacity: 0.85;
 }
+
 body {
   margin: 0;
   padding: 0;
   min-height: 100vh;
+  font-family: Arial, sans-serif;
 }
 
+/* Tablet Styles */
+@media (max-width: 992px) {
+  .product-card-men {
+    max-width: 90%;
+    gap: 1.5rem;
+  }
+  
+  .product-image-men {
+    grid-column: 1 / span 5;
+  }
+  
+  .product-image-men img {
+    max-width: 180px;
+  }
+}
+
+/* Mobile Styles */
 @media (max-width: 768px) {
   .product-section-men {
     padding: 1rem;
@@ -140,11 +159,18 @@ body {
   .product-card-men {
     grid-template-columns: 1fr;
     padding: 1.5rem;
+    bottom: 0; /* Hapus posisi bottom pada mobile */
+    margin-top: 2rem; /* Tambahkan margin atas sebagai gantinya */
+    width: 90%;
   }
 
   .product-image-men {
     grid-column: 1 / -1;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .product-image-men img {
+    max-width: 180px;
   }
 
   .product-details-men {
@@ -160,10 +186,41 @@ body {
   .price-action-men {
     flex-direction: column;
     align-items: flex-start;
+    width: 100%;
   }
 
   .btn-men {
     width: 100%;
     text-align: center;
+    margin-top: 0.5rem;
+    padding: 0.75rem 1rem;
+  }
+  
+  .btn-men.buy {
+    margin-bottom: 0.5rem;
+  }
+}
+
+/* Small Mobile Styles */
+@media (max-width: 480px) {
+  .product-card-men {
+    padding: 1.25rem;
+    width: 92%;
+  }
+  
+  .product-title-men {
+    font-size: 1.1rem;
+  }
+  
+  .description-men {
+    font-size: 0.9rem;
+  }
+  
+  .price-men {
+    font-size: 1.1rem;
+  }
+  
+  .product-image-men img {
+    max-width: 150px;
   }
 }
