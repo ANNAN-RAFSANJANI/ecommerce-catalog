@@ -25,6 +25,12 @@ const routes = [
     props: true 
   },
   {
+    path: '/pria/unavailable-product/:id',
+    name: 'PriaUnavailable',
+    component: UnavailableProductSection,
+    props: true
+  },
+  {
     path: '/wanita',
     name: 'Wanita',
     component: WomenSection
@@ -34,11 +40,6 @@ const routes = [
     name: 'WanitaDetail', 
     component: WomenSection,
     props: true
-  },
-  {
-    path: '/unavailable',
-    name: 'Unavailable',
-    component: UnavailableProductSection,
   },
   {
     path: '*',

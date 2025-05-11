@@ -1,4 +1,4 @@
-<!-- <template>
+<template>
   <div id="app">
     <NavbarSection />
     <router-view />
@@ -19,9 +19,9 @@ export default {
 
   }
 };
-</script> -->
+</script>
 
-<template>
+<!-- <template>
   <div id="app">
     <NavbarSection />
     <UnavailableProductSection/>
@@ -42,6 +42,6 @@ export default {
     FooterSection
   }
 }
-</script>
+</script> -->
 
 

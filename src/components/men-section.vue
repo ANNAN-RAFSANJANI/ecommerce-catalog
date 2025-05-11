@@ -35,7 +35,7 @@
       </div>
     </div>
     <div v-else>
-      <UnavailableProductSection @next="nextProduct" />
+      <div class="redirect-message">Redirecting to unavailable product page...</div>
     </div>
   </div>
 </template>
@@ -43,13 +43,9 @@
 <script>
 import '@/assets/style/men-style.css'
 import axios from 'axios'
-import UnavailableProductSection from './unavailable-product.vue'
 
 export default {
   name: "MenSection",
-  components: {
-    UnavailableProductSection
-  },
   props: {
     id: {
       type: [String, Number],
@@ -82,6 +78,14 @@ export default {
 
         this.product = product
         this.loading = false
+        
+        // Redirect if product is not men's clothing
+        if (product && product.category !== 'men\'s clothing') {
+          // Add small timeout to allow component to render before redirect
+          setTimeout(() => {
+            this.$router.push(`/pria/unavailable-product/${this.currentIndex}`);
+          }, 100);
+        }
       } catch (err) {
         this.error = "Gagal memuat produk: " + err.message
         this.loading = false
@@ -95,7 +99,6 @@ export default {
       }
       
       this.$router.push(`/pria/${this.currentIndex}`);
-      
     }
   },
   created() {
@@ -107,3 +110,12 @@ export default {
   }
 }
 </script>
+
+<style>
+.redirect-message {
+  text-align: center;
+  padding: 20px;
+  color: #555;
+  font-style: italic;
+}
+</style>
