@@ -4,9 +4,9 @@
   justify-content: space-between;
   padding: 2rem;
   background-color:#D6E6FF;
-  min-height: 100vh; /* Menggunakan viewport height untuk memenuhi tinggi layar */
-  width: 100%; /* Memastikan lebar penuh */
-  box-sizing: border-box; /* Memastikan padding tidak menambah ukuran elemen */
+  min-height: 100vh; 
+  width: 100%;
+  box-sizing: border-box; 
 }
 
 .hero-content {
@@ -93,8 +93,7 @@
 }
 
 .hero-btn.secondary {
-  background-color: 
-#007bff;
+  background-color: #007bff;
   color: white;
   width: 100%;
 }
@@ -150,8 +149,7 @@
 }
 
 .nav-btn:hover {
-  background-color: 
-#007bff;
+  background-color:#007bff;
 }
 
 .nav-btn.prev {
@@ -160,6 +158,11 @@
 
 .nav-btn.next {
   right: 37px; 
+}
+
+.btn-men:hover {
+  opacity: 0.85;
+  transform: translateY(-2px);
 }
 
 .product-info {
@@ -198,6 +201,64 @@
   border-radius: 8px;
 }
 
+/* Skeleton Loader Styles */
+.hero-skeleton {
+  width: 90%;
+  max-width: 560px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  background-color: white;
+}
+
+.skeleton-image {
+  width: 100%;
+  height: 400px;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: skeleton-loading 1.5s infinite;
+}
+
+.skeleton-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.skeleton-title {
+  height: 16px;
+  border-radius: 4px;
+  background: linear-gradient(90deg, #777 25%, #999 50%, #777 75%);
+  background-size: 200% 100%;
+  animation: skeleton-loading 1.5s infinite;
+  margin-bottom: 8px;
+  width: 80%;
+}
+
+.skeleton-price {
+  height: 14px;
+  border-radius: 4px;
+  background: linear-gradient(90deg, #777 25%, #999 50%, #777 75%);
+  background-size: 200% 100%;
+  animation: skeleton-loading 1.5s infinite;
+  width: 40%;
+}
+
+@keyframes skeleton-loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
 @media (max-width: 768px) {
   .hero-section {
     flex-direction: column;
@@ -222,7 +283,7 @@
     font-size: 1rem;
   }
 
-  .hero-image {
+  .hero-image, .hero-skeleton {
     width: 400px;   
   }
 
@@ -258,6 +319,10 @@
     width: 100%;
     text-align: center;
   }
+  
+  .skeleton-image {
+    height: 350px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -275,10 +340,11 @@
     gap: 0.5rem;
   }
 
-  .hero-image img {
+  .hero-image img, .skeleton-image {
     height: 300px;
   }
-    .dropdown-container, 
+  
+  .dropdown-container, 
   .hero-btn {
     width: 100%;
   }

@@ -1,6 +1,30 @@
 <template>
   <div class="product-section-men">
-    <div v-if="loading" class="loading">Loading products...</div>
+    <div v-if="loading" class="product-skeleton">
+      <div class="skeleton-card-men">
+        <div class="skeleton-image-men">
+          <div class="skeleton-img-placeholder"></div>
+        </div>
+        <div class="skeleton-details-men">
+          <div class="skeleton-title"></div>
+          <div class="skeleton-category-rating">
+            <div class="skeleton-category"></div>
+            <div class="skeleton-rating"></div>
+          </div>
+          <div class="skeleton-description">
+            <div class="skeleton-line"></div>
+            <div class="skeleton-line"></div>
+            <div class="skeleton-line"></div>
+            <div class="skeleton-line" style="width: 70%"></div>
+          </div>
+          <div class="skeleton-price-action">
+            <div class="skeleton-price"></div>
+            <div class="skeleton-btn"></div>
+            <div class="skeleton-btn"></div>
+          </div>
+        </div>
+      </div>
+    </div>
     <div v-else-if="error" class="error">{{ error }}</div>
     <div v-else-if="product && product.category === 'men\'s clothing'" class="product-card-men">
       <div class="product-image-men">
@@ -70,6 +94,7 @@ export default {
     async fetchProduct() {
       try {
         this.loading = true
+        
         const response = await axios.get(`https://fakestoreapi.com/products/${this.currentIndex}`)
         const product = response.data
 

@@ -19,7 +19,7 @@
     </div>
     
     <div class="hero-image-container">
-      <div class="hero-image" v-if="currentProducts.length > 0">
+      <div class="hero-image" v-if="currentProducts.length > 0 && !isLoading">
         <img :src="currentProducts[currentImageIndex].image" :alt="currentProducts[currentImageIndex].title" />
         <div class="hero-navigation">
           <button class="nav-btn prev" @click="prevImage">&lt;</button>
@@ -30,8 +30,12 @@
           <p>${{ currentProducts[currentImageIndex].price }}</p>
         </div>
       </div>
-      <div v-else class="hero-loading">
-        <p>Memuat produk...</p>
+      <div v-else class="hero-skeleton">
+        <div class="skeleton-image"></div>
+        <div class="skeleton-info">
+          <div class="skeleton-title"></div>
+          <div class="skeleton-price"></div>
+        </div>
       </div>
     </div>
   </div>
@@ -48,7 +52,8 @@ export default {
       womensClothing: [],
       currentCategory: 'all',
       currentImageIndex: 0,
-      isDropdownOpen: false
+      isDropdownOpen: false,
+      isLoading: true
     }
   },
   computed: {
@@ -64,6 +69,7 @@ export default {
   },
   methods: {
     async fetchProducts() {
+      this.isLoading = true;
       try {
         const response = await fetch('https://fakestoreapi.com/products');
         const products = await response.json();
@@ -74,6 +80,11 @@ export default {
         this.currentImageIndex = 0;
       } catch (error) {
         console.error('Error fetching products:', error);
+      } finally {
+        // Menambahkan delay kecil agar skeleton loader terlihat
+        setTimeout(() => {
+          this.isLoading = false;
+        }, 800);
       }
     },
     toggleDropdown() {

@@ -1,6 +1,30 @@
 <template>
   <div class="product-section-women">
-    <div v-if="loading" class="loading">Loading products...</div>
+    <div v-if="loading" class="product-skeleton">
+      <div class="skeleton-card-women">
+        <div class="skeleton-image-women">
+          <div class="skeleton-img-placeholder"></div>
+        </div>
+        <div class="skeleton-details-women">
+          <div class="skeleton-title"></div>
+          <div class="skeleton-category-rating">
+            <div class="skeleton-category"></div>
+            <div class="skeleton-rating"></div>
+          </div>
+          <div class="skeleton-description">
+            <div class="skeleton-line"></div>
+            <div class="skeleton-line"></div>
+            <div class="skeleton-line"></div>
+            <div class="skeleton-line" style="width: 70%"></div>
+          </div>
+          <div class="skeleton-price-action">
+            <div class="skeleton-price"></div>
+            <div class="skeleton-btn"></div>
+            <div class="skeleton-btn"></div>
+          </div>
+        </div>
+      </div>
+    </div>
     <div v-else-if="error" class="error">{{ error }}</div>
     <div v-else-if="product && product.category === 'women\'s clothing'" class="product-card-women">
       <div class="product-image-women">
@@ -70,6 +94,7 @@ export default {
     async fetchProduct() {
       try {
         this.loading = true
+        
         const response = await axios.get(`https://fakestoreapi.com/products/${this.currentIndex}`)
         const product = response.data
 
@@ -100,6 +125,7 @@ export default {
     if (this.$route.params.id) {
       this.currentIndex = parseInt(this.$route.params.id);
     }
+    
     this.fetchProduct()
   }
 }
